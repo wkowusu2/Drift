@@ -8,6 +8,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapScreen from './screens/MapScreen';
+import SignIn from './screens/SignIn';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -21,7 +22,9 @@ export default function App() {
             style={{ flex: 1 }}
             keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 0}
           >
-            <Stack.Navigator>
+          <SafeAreaView>
+          <SignIn />
+            {/* <Stack.Navigator>
               <Stack.Screen 
                 name="HomeScreen" 
                 component={HomeScreen} 
@@ -32,7 +35,8 @@ export default function App() {
                 component={MapScreen} 
                 options={{ headerShown: false }} 
               />
-            </Stack.Navigator>
+            </Stack.Navigator> */}
+          </SafeAreaView>    
           </KeyboardAvoidingView>
         </SafeAreaProvider>
       </NavigationContainer>
